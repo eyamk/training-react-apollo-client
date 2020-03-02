@@ -1,18 +1,19 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom'
+import { get, map } from 'lodash'
 import { useQuery } from '@apollo/react-hooks'
-import GET_USER_BYID from '../graphql/queries/user/GetUserById'
 import UserWrapper from './UserWrapper'
+import GET_USER from '../../graphql/queries/user/GetUserById'
 
-const UserInfo = ({ id }) => {
-	console.log(id)
+const UserInfo = ({ match }) => {
 	const history = useHistory()
-	// const { loading, error } = useQuery(GET_USER_BYID, {
-	// 	variables: { id },
-	// })
+	const { data } = useQuery(GET_USER, {
+		variables: { id: match.params.id },
+		refetchQueries: ['GET_USER'],
+	})
+	const user = get(data, 'getuserById', [])
+	const { photos } = user
 
-/* 	if (loading) return null
-	if (error) return `Error! ${error}` */
 	return (
 		<UserWrapper>
 			<Router>
@@ -20,7 +21,9 @@ const UserInfo = ({ id }) => {
 					<Link to='/' onClick={() => history.push('/')}>
 						<button className='btn'> back </button>
 					</Link>
-					{/* <img src={data.getuserById.url} /> */}
+					{map(photos, photo => (
+						<img className='image' src={photo.url} alt='url' />
+					))}
 				</div>
 			</Router>
 		</UserWrapper>

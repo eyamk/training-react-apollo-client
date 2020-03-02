@@ -3,6 +3,7 @@ import { gql } from 'apollo-boost'
 const getUsers = gql`
 	{
 		getUsers {
+			id
 			name
 			username
 			email

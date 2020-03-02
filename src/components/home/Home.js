@@ -1,6 +1,6 @@
 import React from 'react'
 import UsersList from '../user/UsersList'
-import Header from '../header/Header'
+import Header from '../../shared/layout/Header'
 
 const Home = () => {
 	return (

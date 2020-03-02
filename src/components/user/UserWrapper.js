@@ -29,4 +29,7 @@ export default styled.div`
 		justify-content: center;
 		border-radius: 20px;
 	}
+	.image {
+		margin-top: 50px;
+	}
 `

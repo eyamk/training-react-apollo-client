@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Modal from '../modal/Modal'
-import HeaderWrapper from './HeaderWrapper'
 import PropTypes from 'prop-types'
+import Modal from '../../../components/modal'
+import HeaderWrapper from './HeaderWrapper'
 
 const Header = () => {
 	const [show, setShowModal] = useState(false)

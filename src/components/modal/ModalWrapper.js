@@ -5,13 +5,14 @@ export default styled.div`
 		position: absolute;
 		left: 50%;
 		top: 50vh;
-		background-color: #f2f2f2;
+		background-color: white;
 		z-index: 10;
 		transform: translate(-50%, -50%);
 		animation: slideFromTop 0.5s both 0.1s;
 		width: 500px;
-		height: 300px;
-		border: 0.5px solid grey;
+		height: 400px;
+		border: #333333 solid 0px;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 	}
 	.inputModal {
 		position: absolute;
@@ -34,14 +35,21 @@ export default styled.div`
 		justify-content: center;
 		border-radius: 20px;
 	}
-	.btn-Close {
+	.modal-close {
+		color: #aaa;
+		line-height: 50px;
+		font-size: 80%;
 		position: absolute;
-		width: 80px;
-		height: 35px;
-		font-size: 18px;
-		background-color: #fe2e2e;
-		display: flex;
-		justify-content: center;
-		border-radius: 20px;
+		right: 0;
+		text-align: center;
+		top: 0;
+		width: 70px;
+		text-decoration: none;
+		&:hover {
+			color: black;
+		}
+		.formUser {
+			padding: 20px;
+		}
 	}
 `

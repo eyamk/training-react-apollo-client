@@ -14,9 +14,9 @@ const UserItem = ({ item }) => {
 				<h4>{item.gender}</h4>
 				<h4>
 					<Link
-						to='/moreInfo'
+						to={`/user/${item.id}`}
 						refresh='true'
-						onClick={() => history.push('/moreInfo')}
+						onClick={() => history.push(`/user/${item.id}`)}
 					>
 						see more ...
 					</Link>
